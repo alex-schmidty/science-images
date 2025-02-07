@@ -18,10 +18,10 @@ RUN mkdir -p data
 ENV CONFIG_LOC "/TopCPToolkit/source/TopCPToolkit/share/configs/customConfig"
 RUN mkdir -p $CONFIG_LOC
 
-ENV X509_USER_PROXY=/tmp/x509_proxy
+ENV X509_USER_PROXY=/tmp/grid-security/x509up
 
 RUN chmod +x /TopCPToolkit/build/x86_64-el9-gcc13-opt/setup.sh
 
 USER servicex
 
-COPY ./boot.bash_profile /
+COPY ./boot.bash_profile /root/.bashrc
